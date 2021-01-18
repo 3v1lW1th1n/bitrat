@@ -1,9 +1,4 @@
-import readline
-import socket
-import sys
-import time
-import os
-import binascii
+import readline, socket, sys, time, os, binascii
 from Crypto import Random
 from Crypto.Cipher import AES
 def logo():
